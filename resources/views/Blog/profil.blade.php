@@ -94,13 +94,14 @@ Blog
                           <span class="username">
                             <a href="#">{{$user->name}}</a>
                           </span>
-                          <span class="description">Shared publicly - 7:45 PM today</span>
+                          <br>
+                          <span class="description"><p><b>Usuario desde</b> {{$user->created_at->diffForHumans() }}</span>
                         </div>
                         <!-- /.user-block -->
                         <br>
                         <br>
                         <br>
-                        <p><strong>Grupos a los que pertenece:</strong></p>
+                        <p><br> <strong>Grupos a los que pertenece:</strong></p>
 
                             @forelse ($user->groups as $group)
                                 <span class="badge badge-primary">{{ $group->name }}</span>
@@ -120,7 +121,7 @@ Blog
                 </div>
               </div>
               <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
-                <h3 class="text-primary"><i class="fas fa-paint-brush"></i>Viografia</h3>
+                <h3 class="text-primary"><i class="fas fa-paint-brush"></i>Biografía</h3>
                 <p class="text-muted">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
                 <br>
                 <div class="text-muted">
@@ -220,6 +221,7 @@ Blog
                                     <span class="badge badge-light">
                                         #{{ $tag->name}}
                                     </span>
+
                                     @endforeach
                                     @endif
                                     </div>
@@ -264,6 +266,7 @@ Blog
                                     <span class="badge badge-light">
                                         #{{ $tag->name}}
                                     </span>
+
                                     @endforeach
                                     @endif
                                     </div>

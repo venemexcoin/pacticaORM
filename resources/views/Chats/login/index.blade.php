@@ -26,7 +26,7 @@
   <div class="lockscreen-name">{{ Auth::user()->name }}</div>
 
   <!-- START LOCK SCREEN ITEM -->
-  
+
   <div class="lockscreen-item">
     <!-- lockscreen image -->
     <div class="lockscreen-image user-panel mt-3 pb-3 mb-4 d-flex">
@@ -39,20 +39,23 @@
     <!-- /.lockscreen-image -->
 
     <!-- lockscreen credentials (contains the form) -->
-    <form  method="GET" action="{{route('chat.index') }}" class="lockscreen-credentials">
-         <div class="input-group">    
+        {!!Form::open(['route' => 'chatlogin.store','class' => 'lockscreen-credentials']) !!}
+         <div class="input-group">
+
+
           {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'UserChat']) !!}
-        
+
+          {!!Form::close() !!}
         <div class="input-group-append">
           <button type="submit" class="btn"><i class="fas fa-arrow-right text-muted"></i></button>
         </div>
-        
+
       </div>
     </form>
     <!-- /.lockscreen credentials -->
 
   </div>
-  
+
   <!-- /.lockscreen-item -->
   <div class="help-block text-center">
     Coloque el nombre de su usuario en el chat

@@ -87,3 +87,15 @@
     font-family: SairaStencilOne-Regular;
     color: rgb(241, 45, 45);
 }
+
+.foro_title {
+    font-family: Anton-Regular;
+    font-size: 20px;
+
+}
+
+.foro_info {
+    font-family: SairaStencilOne-Regular;
+    font-size: 10px;
+    color: rgb(36, 148, 49);
+}

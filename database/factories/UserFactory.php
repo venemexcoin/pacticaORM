@@ -27,3 +27,25 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+
+
+$factory->define(App\Chat::class, function (Faker $faker) {
+    return [
+        'user_id'  => rand(1, 5),
+        'title' => $faker->sentence,
+        'description' => $faker->paragraph,
+        'url' => $faker->url,
+
+    ];
+});
+
+$factory->define(App\Chatuser::class, function (Faker $faker) {
+    return [
+
+        'user_id'  => rand(1, 5),
+        'name' => $faker->userName,
+
+
+    ];
+});

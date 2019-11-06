@@ -177,8 +177,8 @@ class PermissionsTableSeeder extends Seeder
             'description'  => 'ELiminar cualquier categoria del sistema',
         ]);
 
-         // Etiqutas del blog
-         Permission::create([
+        // Etiqutas del blog
+        Permission::create([
             'name'         => 'Navegar etiqueta blog',
             'slug'         => 'tags.index',
             'description'  => 'Lista y navega el etiqueta blog del blog',
@@ -277,6 +277,27 @@ class PermissionsTableSeeder extends Seeder
             'name'         => 'Eliminar archivos zip del blog',
             'slug'         => 'download.destroy',
             'description'  => 'ELiminar cualquier archivos zip del blog',
+        ]);
+
+        // Chat permisos
+
+        Permission::create([
+            'name'         => 'Crear una publicacion de chat',
+            'slug'         => 'chat.create',
+            'description'  => 'Crear nuevas publicaciones',
+        ]);
+
+        Permission::create([
+            'name'         => 'Edición publucaciones de chat',
+            'slug'         => 'chat.edit',
+            'description'  => 'Editar todos lo registros de chat',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Eliminar Publicaciones de chat',
+            'slug'         => 'chat.destroy',
+            'description'  => 'ELiminar cualquier publicacion de chat',
         ]);
     }
 }

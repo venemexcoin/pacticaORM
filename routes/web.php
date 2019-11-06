@@ -43,12 +43,8 @@ Route::group(['middleware' => ['auth']], function () {
     //perfil personal
     Route::get('profil/{id}', 'Web\ProfilController@profil')->name('profil');
     Route::get('level/{id}', 'Web\ProfilController@level')->name('level');
- 
-    //Chat de la aplicación
-    Route::get('/chatlogin', function () {
 
-        return view('Chats.login');
-    });
+
 
     //Roles
     Route::post('roles/store', 'RoleController@store')->name('roles.store')
@@ -150,8 +146,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('profile',    'ProfileController');
 
-    Route::resource('blogprofile','BlogprofileController');
+    Route::resource('blogprofile', 'BlogprofileController');
 
     Route::resource('chat',       'Chat\ChatController');
-   
+
+    Route::resource('chatlogin',       'Chat\ChatUserController');
 });

@@ -24,7 +24,7 @@ class PostStoreRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'name'        => 'required',
+            'name'        => 'required | max:128',
             'slug'        => 'required | unique:posts,slug',
             'user_id'     => 'required | integer',
             'category_id' => 'required | integer',
@@ -34,11 +34,9 @@ class PostStoreRequest extends FormRequest
             'cripto'      => 'required '
 
         ];
-        if($this->get('file'))
+        if ($this->get('file'))
             $rules = array_merge($rules, ['file' => 'mimes:jpg,jpeg,bmp,php']);
 
         return $rules;
-
-
     }
 }

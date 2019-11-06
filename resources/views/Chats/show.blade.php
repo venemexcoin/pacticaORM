@@ -7,13 +7,13 @@ Chat descripción
 {{ route('home')}}
 @endsection
 @section("layoutR")
-{{ route('blog')}}
+{{ route('chat.index')}}
 @endsection
 @section("homeT")
 Home
 @endsection
 @section("layout")
-Blog
+Foro
 @endsection
 @section("otros")  {{--} ruta--}}
 
@@ -32,13 +32,22 @@ Blog
 @section('content')
 
 <div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Title</h2>
-                <p>Description</p>
-                <p>Posted 5 hours ago.</p>
+            <h2>{{ $chat->title }}</h2>
+                <p>{{$chat->description }}</p>
+                <br>
+            <label><a href=" {{ $chat->url }}"> {{ $chat->url }}</a> </label>
+
+                <p>Posted {{$chat->created_at->diffForHumans() }}.</p>
+
+                <br>
+                <label><a href="{{ route('profil',  [$chat->user->id])}}"> Publicado por: {{ $chat->user->name }}</a></label>
+
             </div>
         </div>
+    </div>
 </div>
 
 @endsection

@@ -1,7 +1,7 @@
 @extends("theme1.$theme5.layouts")
 
 @section("titles")
-Crear 
+Crear
 @endsection
 @section("homeD")
 {{ route('home')}}

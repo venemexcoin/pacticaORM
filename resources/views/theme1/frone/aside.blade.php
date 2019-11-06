@@ -297,13 +297,13 @@
                 </form>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+              <a href="{{route("profile.index")}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Perfil</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+              <a href="{{route('chat.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Foro</p>
                 </a>

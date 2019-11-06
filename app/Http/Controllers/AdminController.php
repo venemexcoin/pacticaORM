@@ -56,7 +56,7 @@ class AdminController extends Controller
 
         $permiso = Permission::create($request->all());
 
-        return redirect()->route('permisos.edit', compact('permiso'))
+        return redirect()->route('admin.permisos.edit', compact('permiso'))
             ->with('info', 'categorías creada con éxito');
     }
 

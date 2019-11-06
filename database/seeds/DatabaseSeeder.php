@@ -41,6 +41,10 @@ class DatabaseSeeder extends Seeder
             'special' => 'all-access'
         ]);
 
+        factory(App\Chatuser::class, 5)->create();
+
+        factory(App\Chat::class, 200)->create();
+
         factory(App\Category::class, 4)->create();
         factory(App\Tag::class, 12)->create();
 

@@ -7,13 +7,13 @@ Blog
 {{ route('home')}}
 @endsection
 @section("layoutR")
-{{ route('blog')}}
+{{ route('chat.index')}}
 @endsection
 @section("homeT")
 Home
 @endsection
 @section("layout")
-Blog
+Foros
 @endsection
 @section("otros")  {{--} ruta--}}
 
@@ -54,18 +54,21 @@ Blog
                        {{ $post->excerpt }}
 
                       <a href="{{ route('post', $post->slug ) }}" class="float-right">Lee más</a>
+                      <hr>
+                      <p>Posted {{$post->created_at->diffForHumans() }}</p>
                       </div>
                     <!--/.card body -->
                     <!-- /.card-body -->
                       <div class="card-footer">
 
-                      </div><hr/>
+                      </div>
                       <!-- /.card-footer-->
                       @endforeach
+                    </div>
 
                       {{ $posts->render()}}
-                  </div>
-                </div>
+
+                </div><hr/>
               </div>
 
             </section>

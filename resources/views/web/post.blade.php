@@ -35,10 +35,11 @@ Blog
     <div class="card card-widget">
       <div class="card-header">
         <div class="user-block">
-            @if($post->user->avatar == '')
-                <img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image">
+            @if($post->user->avatar)
+            <img class="img-circle" src="{{$post->user->avatar}}" alt="User Image">
             @else
-          <img class="img-circle" src="{{$post->user->avatar}}" alt="User Image">
+            <img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image">
+
             @endif
 
         <span class="username"><p><a href="{{ route('profil',  [$post->user->id])}}"><b>{{$post->user->name }}</b></a></p>
