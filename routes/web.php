@@ -136,19 +136,23 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Admin blog
 
-    Route::resource('tags',       'Admin\TagController');
+    Route::resource('tags',        'Admin\TagController');
 
-    Route::resource('categories', 'Admin\CategoryController');
+    Route::resource('categories',  'Admin\CategoryController');
 
-    Route::resource('posts',      'Admin\PostController');
+    Route::resource('posts',       'Admin\PostController');
 
-    Route::resource('downloads',  'Admin\DownloadController');
+    Route::resource('downloads',   'Admin\DownloadController');
 
-    Route::resource('profile',    'ProfileController');
+    Route::resource('profile',     'ProfileController');
 
     Route::resource('blogprofile', 'BlogprofileController');
 
-    Route::resource('chat',       'Chat\ChatController');
+    Route::resource('chat',        'Chat\ChatController');
 
-    Route::resource('chatlogin',       'Chat\ChatUserController');
+    Route::resource('chatlogin',   'Chat\ChatUserController');
+
+
+    Route::resource('comment',     'CommentController');
+    Route::name('create_comment_path')->post('/chat/{chat}/comment', 'CommentController@creates');
 });

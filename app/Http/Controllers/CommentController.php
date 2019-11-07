@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Chat;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -14,7 +15,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        return 'hola que tal';
     }
 
     /**
@@ -35,7 +36,22 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $comment = new Comment;
+
+        $comment->user_id = \Auth::user()->id;
+
+        $comment->body = $request->get('comment');
+
+        $comment->commentable_type = $request->get('nombredato');
+
+        $comment->commentable_id = $request;
+
+
+
+        $comment->save();
+
+        return redirect()->route('chat.show', ['chat' => $chatId]);
     }
 
     /**
@@ -81,5 +97,26 @@ class CommentController extends Controller
     public function destroy(Comment $comment)
     {
         //
+    }
+    public function creates(Request $request, $chatId)
+    {
+
+
+
+        $comment = new Comment;
+
+        $comment->user_id = \Auth::user()->id;
+
+        $comment->body = $request->get('comment');
+
+        $comment->commentable_type = $request->get('nombredato');
+
+        $comment->commentable_id = $chatId;
+
+
+
+        $comment->save();
+
+        return redirect()->route('chat.show', ['chat' => $chatId]);
     }
 }

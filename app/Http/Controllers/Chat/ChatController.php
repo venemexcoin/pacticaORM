@@ -80,6 +80,7 @@ class ChatController extends Controller
     public function show(Chat $chat)
     {
 
+
         return view('Chats.show', compact('chat'));
     }
 
