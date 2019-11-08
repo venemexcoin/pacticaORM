@@ -34,7 +34,7 @@ Foro
 <div class="container">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8 offset-md-2">
             <h2>{{ $chat->title }}</h2>
                 <p>{{$chat->description }}</p>
                 <br>
@@ -48,29 +48,13 @@ Foro
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8 offset-md-2">
 
              @if(Auth::guest())
 
              please log in to you accound to comment,
 
              @else
-{{--
-             <div class="row">
-                    <div class="col-md-12">
-                        @foreach ($chat->comments as $comment)
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="well">
-                                    {{$comment->body}}
-                                </div>
-                            </div>
-                        </div>
-
-                        @endforeach
-                    </div>
-                </div> --}}
 
                     <!-- DIRECT CHAT -->
                     <div class="card direct-chat direct-chat-primary">
@@ -99,11 +83,19 @@ Foro
                                         <span class="direct-chat-timestamp float-right">{{$comment->created_at->diffForHumans() }}</span>
                                     </div>
                                      <!-- /.direct-chat-infos -->
-                                     @if($chat->user->avatar)
-                                     <img class="direct-chat-img" src="{{ $comment->user->avatar }}" alt="message user image">
+
+                                        <div class="image">
+                                     @if($chat->user->avatar == 'php artisan ')
+                                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                                     <div class="image">
+                                        <img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image">
+                                           </div>
+                                     </div>
                                      @else
-                                     <img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image">
+
+                                            <img class="direct-chat-img" src="{{ $comment->user->avatar }}" alt="message user image">
                                      @endif
+                                        </div>
 
                                     <!-- /.direct-chat-img -->
                                     <div class="direct-chat-text">
@@ -126,7 +118,7 @@ Foro
                           <input type="text" name="comment" placeholder="Type Message ..." class="form-control">
                           <input type="hidden" name="nombredato" value="App\Chat">
                           <span class="input-group-append">
-                            <button type="button" class="btn btn-primary">Send</button>
+                            <button type="sudmit" class="btn btn-primary">Send</button>
                           </span>
                         </div>
                       </form>
@@ -135,19 +127,6 @@ Foro
                   </div>
                   <!--/.direct-chat -->
 
-
-
-            {{-- <form action="{{ route('create_comment_path', ['chat' => $chat->id]) }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label for="comment">Comment</label>
-                    <textarea name="comment" id=""  rows="3" class="form-control"></textarea>
-                </div>
-
-                <input type="hidden" name="nombredato" value="App\Chat">
-                    <button type="submit" class="btn btn-primary">Post Comment</button>
-                </div>
-                </form> --}}
             @endif
             </div>
         </div>

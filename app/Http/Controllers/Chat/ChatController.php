@@ -79,7 +79,7 @@ class ChatController extends Controller
      */
     public function show(Chat $chat)
     {
-
+        $chat->load('comments', 'comments.user');
 
         return view('Chats.show', compact('chat'));
     }

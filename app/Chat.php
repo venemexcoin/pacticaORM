@@ -19,7 +19,12 @@ class Chat extends Model
     }
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'commentable');
+        return $this->morphMany(Comment::class, 'commentable')->orderBy('id', 'ASC');
+    }
+
+    public function votes()
+    {
+        return $this->hasMany(PostVote::class);
     }
 
     public function wasCreatedBy($user)
@@ -29,5 +34,10 @@ class Chat extends Model
         }
 
         return $this->user_id === $user->id;
+    }
+
+    public function totalVotes()
+    {
+        return $this->votes()->sum('vote');
     }
 }

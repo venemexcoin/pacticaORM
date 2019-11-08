@@ -155,4 +155,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('comment',     'CommentController');
     Route::name('create_comment_path')->post('/chat/{chat}/comment', 'CommentController@creates');
+
+    Route::name('vote_post_path')->post('/posts/{post}/vote', 'PostVotesController@store');
 });
