@@ -26,7 +26,7 @@ Blog
 @endsection
 
 @section("styles")
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 @endsection
 
 @section('content')
@@ -145,16 +145,16 @@ Blog
                 <ul class="list-unstyled">
                   <li>
                   @if($user->profile )
-                  <a href="{{url($user->profile->facebook)}}" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i>Facebook</a>
+                  <a href="{{url($user->profile->facebook)}}" class="btn-facebook"><i class="fa fa-facebook"></i>acebook</a>
                   @else
-                  <i class="far fa-fw fa-file-word"></i><b>No tiene Facebook</b>
+                  <i class="far fa-fw fa-facebook"></i><b>No tiene Facebook</b>
                   @endif
                  </li>
                   <li>
                     @if($user->profile)
-                    <a href="{{url($user->profile->instagram)}}" class="btn-link text-secondary"><i class="far fa-fw fa-file-pdf"></i>Instagram</a>
+                    <a href="{{url($user->profile->instagram)}}" class="btn-instagram"><i class="fa fa-instagram"></i>instagram</a>
                     @else
-                    <i class="far fa-fw fa-facebook"></i><b>No tiene instagram</b>
+                    <i class="far fa-fw fa-instagram"></i><b>No tiene Instagram</b>
                     @endif
                 </li>
                   <li>
@@ -166,14 +166,14 @@ Blog
                   </li>
                   <li>
                     @if($user->profile)
-                    <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-image "></i>{{$user->profile->telefon}}</a>
+                    <a href="" class="btn-link text-secondary"><i class="fas fa-mobile-alt "></i> {{ $user->profile->telefon}}</a>
                     @else
                      <i class="far fa-fw fa-image"></i><b>No tiene Teléfono</b>
                     @endif
                 </li>
                   <li>
                     @if($user->profile)
-                        <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i>{{$user->profile->web}}</a>
+                        <a href="" class="btn-link text-secondary"><i class="fas fa-at"></i> {{ $user->profile->web}}</a>
                     @else
                     <i class="far fa-fw fa-image"></i><b>No tiene Pagina Web</b>
                     @endif

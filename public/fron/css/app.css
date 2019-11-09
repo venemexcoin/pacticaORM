@@ -99,3 +99,33 @@
     font-size: 10px;
     color: rgb(36, 148, 49);
 }
+
+.btn-facebook {
+    background-color: #3b5998;
+    border-color: darken(#3b5998, 3%);
+    color: white;
+
+
+}
+
+.btn-twitter {
+    background-color: #55acee;
+    border-color: darken(#55acee, 3%);
+    color: white;
+
+
+}
+
+.btn-google {
+    background-color: #dd4b39;
+    border-color: darken(#dd4b39, 3%);
+    color: white;
+
+}
+
+.btn-instagram {
+    background-color: #e95950;
+    border-color: darken(#e95950, 3%);
+    color: white;
+
+}
